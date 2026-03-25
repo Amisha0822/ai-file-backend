@@ -3,7 +3,7 @@ import * as shareController from "../controllers/shareController";
 import { authenticate } from "../middlewares/auth";
 import { validateShareFile } from "../middlewares/validation";
 
-const router = Router();
+const router: Router = Router();
 
 router.use(authenticate);
 

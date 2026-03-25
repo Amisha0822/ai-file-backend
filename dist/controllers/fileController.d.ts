@@ -1,0 +1,20 @@
+import { Response } from "express";
+import multer from "multer";
+export declare const upload: multer.Multer;
+export declare const uploadFile: (req: import("express").Request, res: Response, next: import("express").NextFunction) => void;
+export declare const getFiles: (req: import("express").Request, res: Response, next: import("express").NextFunction) => void;
+export declare const getSharedFiles: (req: import("express").Request, res: Response, next: import("express").NextFunction) => void;
+export declare const getRecentFiles: (req: import("express").Request, res: Response, next: import("express").NextFunction) => void;
+export declare const getStarredFiles: (req: import("express").Request, res: Response, next: import("express").NextFunction) => void;
+export declare const getTrashedFiles: (req: import("express").Request, res: Response, next: import("express").NextFunction) => void;
+export declare const toggleStar: (req: import("express").Request, res: Response, next: import("express").NextFunction) => void;
+export declare const trashFile: (req: import("express").Request, res: Response, next: import("express").NextFunction) => void;
+export declare const restoreFile: (req: import("express").Request, res: Response, next: import("express").NextFunction) => void;
+export declare const deleteFilePermanently: (req: import("express").Request, res: Response, next: import("express").NextFunction) => void;
+export declare const getFile: (req: import("express").Request, res: Response, next: import("express").NextFunction) => void;
+export declare const deleteFile: (req: import("express").Request, res: Response, next: import("express").NextFunction) => void;
+export declare const renameFile: (req: import("express").Request, res: Response, next: import("express").NextFunction) => void;
+export declare const searchFiles: (req: import("express").Request, res: Response, next: import("express").NextFunction) => void;
+export declare const getStorageStats: (req: import("express").Request, res: Response, next: import("express").NextFunction) => void;
+export declare const getDownloadUrl: (req: import("express").Request, res: Response, next: import("express").NextFunction) => void;
+//# sourceMappingURL=fileController.d.ts.map

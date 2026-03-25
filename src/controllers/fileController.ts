@@ -65,42 +65,42 @@ export const getTrashedFiles = catchAsync(
 
 export const toggleStar = catchAsync(
   async (req: AuthenticatedRequest, res: Response) => {
-    const file = await fileService.toggleStar(req.params.id, req.user!.id);
+    const file = await fileService.toggleStar(req.params.id as string, req.user!.id);
     res.json({ success: true, data: file });
   }
 );
 
 export const trashFile = catchAsync(
   async (req: AuthenticatedRequest, res: Response) => {
-    const file = await fileService.trashFile(req.params.id, req.user!.id);
+    const file = await fileService.trashFile(req.params.id as string, req.user!.id);
     res.json({ success: true, data: file });
   }
 );
 
 export const restoreFile = catchAsync(
   async (req: AuthenticatedRequest, res: Response) => {
-    const file = await fileService.restoreFile(req.params.id, req.user!.id);
+    const file = await fileService.restoreFile(req.params.id as string, req.user!.id);
     res.json({ success: true, data: file });
   }
 );
 
 export const deleteFilePermanently = catchAsync(
   async (req: AuthenticatedRequest, res: Response) => {
-    await fileService.deleteFilePermanently(req.params.id, req.user!.id);
+    await fileService.deleteFilePermanently(req.params.id as string, req.user!.id);
     res.json({ success: true, message: "File permanently deleted" });
   }
 );
 
 export const getFile = catchAsync(
   async (req: AuthenticatedRequest, res: Response) => {
-    const file = await fileService.getFileById(req.params.id, req.user!.id);
+    const file = await fileService.getFileById(req.params.id as string, req.user!.id);
     res.json({ success: true, data: file });
   }
 );
 
 export const deleteFile = catchAsync(
   async (req: AuthenticatedRequest, res: Response) => {
-    await fileService.deleteFile(req.params.id, req.user!.id);
+    await fileService.deleteFile(req.params.id as string, req.user!.id);
     res.json({ success: true, message: "File deleted successfully" });
   }
 );
@@ -112,7 +112,7 @@ export const renameFile = catchAsync(
 
     const { filename } = req.body;
     const file = await fileService.renameFile(
-      req.params.id,
+      req.params.id as string,
       req.user!.id,
       filename
     );
@@ -140,7 +140,7 @@ export const getStorageStats = catchAsync(
 export const getDownloadUrl = catchAsync(
   async (req: AuthenticatedRequest, res: Response) => {
     const url = await fileService.getFileDownloadUrl(
-      req.params.id,
+      req.params.id as string,
       req.user!.id
     );
     res.json({ success: true, data: { url } });

@@ -3,7 +3,7 @@ import * as fileController from "../controllers/fileController";
 import { authenticate } from "../middlewares/auth";
 import { validateRenameFile } from "../middlewares/validation";
 
-const router = Router();
+const router: Router = Router();
 
 router.use(authenticate);
 

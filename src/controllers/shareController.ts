@@ -13,7 +13,7 @@ export const shareFile = catchAsync(
 
     const { email } = req.body;
     const file = await sharingService.shareFile(
-      req.params.id,
+      req.params.id as string,
       req.user!.id,
       email
     );
@@ -36,7 +36,7 @@ export const unshareFile = catchAsync(
     const { email } = req.body;
 
     const file = await sharingService.unshareFile(
-      req.params.id,
+      req.params.id as string,
       req.user!.id,
       email
     );
@@ -52,7 +52,7 @@ export const unshareFile = catchAsync(
 export const getFileSharing = catchAsync(
   async (req: AuthenticatedRequest, res: Response) => {
     const sharedWith = await sharingService.getFileSharing(
-      req.params.id,
+      req.params.id as string,
       req.user!.id
     );
 
